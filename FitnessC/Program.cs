@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessL.Controller;
+using System;
 
 namespace FitnessC
 {
@@ -12,13 +13,14 @@ namespace FitnessC
             Console.WriteLine("Введите Ваш пол:");
             var gender = Console.ReadLine();
             Console.WriteLine("Введите Вашу дату рождения (типа: DD.MM.YYYY):");
-            var BirthDate =  DateTime.Parse(Console.ReadLine());
+            var birthdate =  DateTime.Parse(Console.ReadLine());
             Console.WriteLine("Введите Ваш вес:");
             var weight = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите Ваш рост:");
             var height = double.Parse(Console.ReadLine());
 
-
+            var userController = new UserController(name, gender, birthdate, weight, height);
+            userController.Save();
 
 
 

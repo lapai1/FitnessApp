@@ -10,10 +10,15 @@ namespace FitnessL.Controller
     public class UserController
     {
         public User User { get;  }
-        public UserController(User user)
+        public UserController(string name, User user)
         {
             User = user ?? throw new ArgumentNullException("Пользователь не может быть равен Null", nameof(user));
         }
+
+        public UserController(string name, string gender, DateTime birthdate, double weight, double height)
+        {
+        }
+
         //в будещем создат класс для сохранения
         public void Save()
         {
